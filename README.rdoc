@@ -1,1 +1,1 @@
-== ShoppingCartExampleApp
+== ShoppingCartExampleApp Using Rails Admin
