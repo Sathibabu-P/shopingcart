@@ -1,0 +1,25 @@
+
+
+
+      <div class="offer offer-primary">
+        <div class="shape">
+          <div class="shape-text">
+            top               
+          </div>
+        </div>
+        <div class="offer-content">
+        
+           <h4><%= product.name %></h4>
+           <%= image_tag product.productimage.url(:thumb) %>
+         
+        <%= form_for order_item, remote: true do |f| %>
+      <h4>Price: <span style="color: green"><%= number_to_currency product.price %></span></h4>
+       
+          <%= f.hidden_field :quantity, value: 1 %>          
+          <%= f.hidden_field :product_id, value: product.id %>
+          <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+        
+      
+      <% end %>
+        </div>
+      </div>
