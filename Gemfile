@@ -17,4 +17,6 @@ gem "paperclip"
 gem 'ckeditor'
 gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
 gem 'rails_admin_charts'
+gem "rails_admin_import"
+gem 'rails_admin_toggleable'
 

@@ -2,9 +2,13 @@ class ApplicationController < ActionController::Base
  layout :layout_by_resource
 
   protected
+  # def current_user
+  #   return unless session[:user_id]
+  #   @current_user ||= User.find(session[:user_id])
+  # end
 
   def layout_by_resource
-    if devise_controller?
+    if devise_controller? && !current_user.blank?
       "admin"
     else
       "application"

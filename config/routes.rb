@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :checkouts, only: [:index]
   mount Rich::Engine => '/rich', :as => 'rich'
-  mount Ckeditor::Engine => '/ckeditor'
-  #mount Rich::Engine => '/rich', :as => 'rich'
+  #mount Ckeditor::Engine => '/ckeditor'
+  mount RailsAdminImport::Engine => '/rails_admin_import', :as => 'rails_admin_import'
+  
   devise_for :admin
   #devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

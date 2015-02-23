@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
   attr_accessor :delete_productimage
   before_validation { self.productimage.clear if self.delete_productimage == '1' }
 
-  default_scope { where(active: true) }
+  #default_scope { where(active: true) } 
 
      rails_admin do   
 		   edit do 
@@ -19,12 +19,16 @@ class Product < ActiveRecord::Base
       		 field :price
       		 field :active
       		 field :productimage
-      		 field :description, :ck_editor
+          field :description, :ck_editor     #        do
+    #   config({
+    #     :insert_many => true
+    #   })
+    # end
 		   end
 		   list do
 		     field :name 
 		     field :price
-		     field :active
+		     field :active, :toggle
 		     field :created_at
 		    end
   		end
@@ -33,4 +37,4 @@ class Product < ActiveRecord::Base
 
 
 end
-
+include RailsAdminCharts

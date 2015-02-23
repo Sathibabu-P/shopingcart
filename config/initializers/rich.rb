@@ -10,7 +10,7 @@ if Object.const_defined?("Rich")
     # Optionally, you can use CarrierWave (https://github.com/carrierwaveuploader/carrierwave).
     # You will need to add it to your Gemfile.
     # config.backend = :carrierwave
-    #config.authentication_method = :authenticate_admin!
+    config.authentication_method = :authenticate_admin!
     # == CKEditor configuration
     # 
     # Rich ships with what I hope are sensible defaults. 
