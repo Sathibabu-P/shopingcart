@@ -28,4 +28,9 @@ class Product < ActiveRecord::Base
 		     field :created_at
 		    end
   		end
+
+      private
+
+
 end
+

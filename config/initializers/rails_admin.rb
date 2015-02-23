@@ -17,7 +17,7 @@ RailsAdmin.config do |config|
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
   config.included_models = [ Product,Order ]
 
- 
+
 
   config.actions do
     dashboard                     # mandatory
@@ -29,7 +29,7 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-
+    charts
     ## With an audit adapter, you can add:
     # history_index
     # history_show
