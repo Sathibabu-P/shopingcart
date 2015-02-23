@@ -15,4 +15,5 @@ gem 'rails_admin'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem "paperclip"
 gem 'ckeditor'
-#gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
+
+gem 'rich', :git => 'https://github.com/bastiaanterhorst/rich.git'
