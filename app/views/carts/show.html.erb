@@ -1,8 +1,7 @@
-<div class="shopping-cart">
-	<div class="well">
+<div class="well">
+<div class="shopping-cart">	
   <%= render "shopping_cart" %>
-  <h3><%="Sub Total : #{number_to_currency current_order.subtotal} " %></h3>
+</div>
+<h3><%="Sub Total : #{number_to_currency current_order.subtotal} " %></h3>
   <%= link_to "Checkout", checkouts_path, :class =>"btn btn-success" %>
- 
-  </div>
-</div
+   </div>

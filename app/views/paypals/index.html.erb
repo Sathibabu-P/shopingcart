@@ -1,0 +1,37 @@
+<div class="container">
+ <%= form_for(@paypal) do |f| %>
+  <% if @paypal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paypal.errors.count, "error") %> prohibited this paypal from being saved:</h2>
+
+      <ul>
+      <% @paypal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+   <div class="field">
+    <%= f.label :cardno %><br>
+    <%= f.text_field :cardno %>
+  </div>
+   <div class="field">
+    <%= f.label :expdate %><br>
+    <%= f.date_select :expdate %>
+  </div>
+   <div class="field">
+    <%= f.label :cvv_no %><br>
+    <%= f.text_field :cvv_no %>
+  </div>  
+<br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+</div>

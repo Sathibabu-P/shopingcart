@@ -1,0 +1,19 @@
+<div class="well">
+<% @order_items.each do |order_item| %>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <h4><%= order_item.product.name %></h4>
+    </div>
+     <div class="col-xs-4">
+      <h4><%= order_item.quantity %> X <%= number_to_currency order_item.unit_price %></h4>
+    </div>
+    <div class="col-xs-4">      
+        <h4 class="text-right"><%= number_to_currency order_item.total_price %><span style="color: green"></span></h4>        
+    </div>
+    <hr>
+  </div>
+  <% end %>
+  <h3 class="text-right" style="color: red"><%="Total : #{number_to_currency current_order.subtotal} " %></h3>
+  <%= link_to "Place Order", paypals_path, :class =>"btn btn-success" %>
+  </div>

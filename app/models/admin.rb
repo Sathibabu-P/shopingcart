@@ -5,6 +5,6 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          rails_admin do   
-		   visible false
+		   visible true
   		end
 end

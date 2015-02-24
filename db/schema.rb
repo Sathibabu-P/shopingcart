@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223071226) do
+ActiveRecord::Schema.define(version: 20150224111859) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -77,6 +77,17 @@ ActiveRecord::Schema.define(version: 20150223071226) do
   end
 
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
+
+  create_table "paypals", force: true do |t|
+    t.string   "name"
+    t.string   "cardno"
+    t.date     "expdate"
+    t.integer  "cvv_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "braintree_customer_id"
+  end
 
   create_table "products", force: true do |t|
     t.string   "name"
