@@ -1,6 +1,9 @@
-RailsAdmin.config do |config|
+require Rails.root.join('lib', 'rails_admin','ordershow.rb')
 
-  ### Popular gems integration
+RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::Ordershow)
+
+#RailsAdmin.config {|c| c.label_methods << :user}
+RailsAdmin.config do |config|
 
   ## == Devise ==
   config.authenticate_with do
@@ -15,7 +18,7 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-  #config.included_models = [ Product,Order ]
+  config.included_models = [ Product,Order,User,OrderStatus ]
 
 
 
@@ -25,6 +28,8 @@ RailsAdmin.config do |config|
     new
     export
     bulk_delete
+     ordershow 
+
     show
     edit
     delete
@@ -35,5 +40,9 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+     # Set the custom action here
+ 
+
   end
 end

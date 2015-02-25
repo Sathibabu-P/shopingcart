@@ -1,0 +1,20 @@
+
+<div class="well">
+
+
+  <div class="row">
+  	<% @order_items.each do |order_item| %>
+	    <div class="col-xs-4">
+	      <h4><%= order_item.product.name %></h4>
+	    </div>
+	     <div class="col-xs-4">
+	      <h4><%= order_item.quantity %> X <%= number_to_currency order_item.unit_price %></h4>
+	    </div>
+	    <div class="col-xs-4">      
+	        <h4 class="text-right"><span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>        
+	    </div> 
+	    <% end %>      
+ <div>      	
+        <%= link_to "Back", index_url, :class =>"btn btn-primart" %>	 
+   
+  </div>

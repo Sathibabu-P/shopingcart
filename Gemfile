@@ -20,4 +20,6 @@ gem 'rails_admin_charts'
 gem "rails_admin_import"
 gem 'rails_admin_toggleable'
 gem "braintree"
+gem 'best_in_place'
+gem "has_permalink"
 

@@ -2,6 +2,7 @@ class PaypalsController < ApplicationController
   before_action :authenticate_user!
 	def index
 		@paypal = Paypal.new
+    @order_items = current_order.order_items
 	end
 
 	 # POST /students
@@ -24,6 +25,10 @@ class PaypalsController < ApplicationController
       if result.success?
         @paypal.braintree_customer_id = result.customer.id
         @paypal.save
+        @order = current_order
+        @order.user_id = current_user.id if current_user
+        @order.save
+        session.delete(:order_id)
         format.html { redirect_to root_path, notice: 'Your Order was successfully Placed.' }
         format.json { render :show, status: :created, location: root_path }
       else
