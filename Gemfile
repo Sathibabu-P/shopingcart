@@ -21,5 +21,6 @@ gem "rails_admin_import"
 gem 'rails_admin_toggleable'
 gem "braintree"
 gem 'best_in_place'
-gem "has_permalink"
+gem 'has_permalink', '~> 0.1.6'
+gem 'google_calendar'
 
