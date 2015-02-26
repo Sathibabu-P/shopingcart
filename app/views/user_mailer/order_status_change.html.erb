@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  	<p><%= @user.email %></p>
+    <h1>Order Status</h1>
+    <% order = OrderStatus.find_by_id(@order.order_status_id) %>
+        <p>Your Order has been <%= order.name %></p>
+    <div class="well">
+	<% @order.order_items.each do |order_item| %>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <h4><%= order_item.product.name %></h4>
+    </div>
+     <div class="col-xs-4">
+      <h4><%= order_item.quantity %> X <%= number_to_currency order_item.unit_price %></h4>
+    </div>
+    <div class="col-xs-4">      
+        <h4 class="text-right"><%= number_to_currency order_item.total_price %><span style="color: green"></span></h4>        
+    </div>
+    <hr>
+  </div>
+  <% end %>
+  <h3 class="text-right" style="color: red"><%="Total : #{number_to_currency @order.subtotal} " %></h3>
+
+  </div>
+  </body>
+</html>

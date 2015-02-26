@@ -3,7 +3,7 @@
 
 
   <div class="row">
-  	<% @order_items.each do |order_item| %>
+  	<% @order.order_items.each do |order_item| %>
 	    <div class="col-xs-4">
 	      <h4><%= order_item.product.name %></h4>
 	    </div>
@@ -13,7 +13,8 @@
 	    <div class="col-xs-4">      
 	        <h4 class="text-right"><span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>        
 	    </div> 
-	    <% end %>      
+	    <% end %>   
+	    <h4 class="text-right"><span style="color: red"><%="Total : #{number_to_currency @order.subtotal} " %></span><h4>
  <div>      	
         <%= link_to "Back", index_url, :class =>"btn btn-primart" %>	 
    

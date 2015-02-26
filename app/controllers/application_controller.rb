@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
  layout :layout_by_resource
-
+ 
   protected
   # def current_user
   #   return unless session[:user_id]
@@ -24,4 +24,7 @@ class ApplicationController < ActionController::Base
       Order.new
     end
   end
+
+   
+
 end

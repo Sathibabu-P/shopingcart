@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   #mount Ckeditor::Engine => '/ckeditor'
   mount RailsAdminImport::Engine => '/rails_admin_import', :as => 'rails_admin_import'
   
-  devise_for :admin
+  devise_for :admin,
+  :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   #devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :products, only: [:index]

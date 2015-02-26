@@ -23,4 +23,11 @@ gem "braintree"
 gem 'best_in_place'
 gem 'has_permalink', '~> 0.1.6'
 gem 'google_calendar'
+gem 'google-api-client', :require => 'google/api_client'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'chronic'
+gem 'whenever', :require => false
+
+
 

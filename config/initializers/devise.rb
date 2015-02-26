@@ -1,11 +1,13 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+ require 'omniauth-google-oauth2'
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '2ad6a6b362e8711b1b730506c569fcfcc29f8a7695f612dea295a397d1863fffb85846eceda13207b4e855d795d911f6e069d5885a27e9ea04caf06a1e242aa8'
-
+ 
+  config.omniauth :google_oauth2, "866050588215-k8ql7cas15qci4ciuvoohl8q4stbifvi.apps.googleusercontent.com", "iwrIXVRKS-OeJm2syWf8iGPw", { access_type: "offline", approval_prompt: "" }
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class

@@ -29,7 +29,7 @@ module RailsAdmin
         register_instance_option :controller do
           Proc.new do
             # Get all selected rows
-            @order_items =  OrderItem.all
+            @order =  Order.find_by_id(params[:id])
             #redirect_to back_or_index    
            
           end
