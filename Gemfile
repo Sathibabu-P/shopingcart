@@ -28,6 +28,6 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'chronic'
 gem 'whenever', :require => false
-
+gem 'twilio-ruby', '~> 3.12'
 
 

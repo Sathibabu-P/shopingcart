@@ -25,6 +25,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def reply_sms
+    UserMailer.verify_phonenumber(id).deliver
+     #  reply = params[:Body].gsub("-\d","")     
+     # if reply == "Y"
+     #    id = params[:Body].gsub("Y-","") 
+     #    UserMailer.verify_phonenumber(id).deliver
+     # else
+     #   id = params[:Body].gsub("N-","") 
+     #  UserMailer.verify_phonenumber(id).deliver
+     # end
+  end
+
    
 
 end
