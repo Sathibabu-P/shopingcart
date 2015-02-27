@@ -30,4 +30,7 @@ gem 'chronic'
 gem 'whenever', :require => false
 gem 'twilio-ruby', '~> 3.12'
 
+group :development do
+    gem 'capistrano'
+end
 
