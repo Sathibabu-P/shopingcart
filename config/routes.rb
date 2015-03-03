@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
   root to: "products#index"
   resources :paypals, only: [:index,:create]
-  get '/reply_sms' => 'application#reply_sms'
+  match '/reply_sms' => 'application#reply_sms' ,via: [:post,:get]
+  #match "/users" => "users#index", via: [:get, :post]
+
 end

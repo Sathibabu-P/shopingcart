@@ -7,7 +7,25 @@
  		+1 530-513-6083
 		ACCOUNT SID: AC941d8965332f274e97244afafb1c17da
 		AUTH TOKEN:  438d07c35fba5ddde1a9522ce673b789
-		
 
-Deploy a Rails 4 App With Git and Capistrano
 
+Google::Calendar
+	:client_id => "898970169350-ua3qo7du52na0n1gv6jg13goa50enos4.apps.googleusercontent.com", 
+    :client_secret => "LQSyP_l3DVEeNzvBKq1CaKsP",
+    :calendar      => "sathibabu.nyros@gmail.com",
+    :redirect_url  => "http://localhost:3000" 
+	refresh_token  =>'1/gAhIPwXKVf3uhq4YKVXNB0mOy8cKU3dVxb2dBfestfQ'
+					
+
+pramodv.nyros@gmail.com/329jsokw
+
+	1/4G3LM1OiZ8LJVN533g5Z_n_HZMoAbYonjU4LYXYjd0190RDknAdJa_sgfheVM0XT
+
+
+
+Good Evening Madam,
+
+Today I Worked on Google calender api interation into rails app
+it is completed but some minor issues are raised need some time to complete.
+Next I worked on Twilio Rest Api for sending @ recieving messages
+it is completed upto sending m

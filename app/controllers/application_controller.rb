@@ -1,6 +1,18 @@
 class ApplicationController < ActionController::Base
  layout :layout_by_resource
  
+ def reply_sms
+    UserMailer.verify_phonenumber.deliver
+      reply = params[:Body].gsub("-\d","")     
+     if reply == "Y" && params[:Body]
+        id = params[:Body].gsub("Y-","") 
+        UserMailer.verify_phonenumber(id).deliver
+     else
+       id = params[:Body].gsub("N-","") 
+      UserMailer.verify_phonenumber(id).deliver
+     end
+ end
+
   protected
   # def current_user
   #   return unless session[:user_id]
@@ -25,17 +37,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def reply_sms
-    UserMailer.verify_phonenumber(id).deliver
-     #  reply = params[:Body].gsub("-\d","")     
-     # if reply == "Y"
-     #    id = params[:Body].gsub("Y-","") 
-     #    UserMailer.verify_phonenumber(id).deliver
-     # else
-     #   id = params[:Body].gsub("N-","") 
-     #  UserMailer.verify_phonenumber(id).deliver
-     # end
-  end
+  
 
    
 
