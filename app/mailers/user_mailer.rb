@@ -7,8 +7,8 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'Order Status')
   end
 
-  def verify_phonenumber(id = 11)
-  	@user = User.find_by_id(id)
+  def verify_phonenumber
+  	@user = User.find_by_id(15)
   	mail(to: @user.email, subject: 'Your Phone number is Verfied')
   end
 

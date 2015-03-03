@@ -3,14 +3,15 @@ class ApplicationController < ActionController::Base
  
  def reply_sms
     UserMailer.verify_phonenumber.deliver
-      reply = params[:Body].gsub("-\d","")     
-     if reply == "Y" && params[:Body]
-        id = params[:Body].gsub("Y-","") 
-        UserMailer.verify_phonenumber(id).deliver
-     else
-       id = params[:Body].gsub("N-","") 
-      UserMailer.verify_phonenumber(id).deliver
-     end
+     #  reply = params[:Body].gsub("-\d","")     if !params[:Body].blank?
+     # if reply == "Y" && params[:Body]
+     #    id = params[:Body].gsub("Y-","") 
+     #    UserMailer.verify_phonenumber(id).deliver
+     # elsif reply == "N"
+     #   id = params[:Body].gsub("N-","") 
+     #  UserMailer.verify_phonenumber(id).deliver
+     # end
+     render :text => "Verified Sucess"
  end
 
   protected
